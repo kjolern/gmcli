@@ -3,19 +3,45 @@ import random
 
 #placeholder tbales, will change.
 flora_tables = {
-    "forest": [
+    "arctic": [
         ("Oak Tree", (1, 30)),
         ("Blueberry Bush", (31, 50)),
         ("Fern", (51, 75)),
         ("Mushroom", (76, 100))
     ],
-    "swamp": [
+    "coastal": [
         ("Willow Tree", (1, 20)),
         ("Reed", (21, 50)),
         ("Water Lily", (51, 75)),
         ("Moss", (76, 100))
     ],
     "desert": [
+        ("Cactus", (1, 40)),
+        ("Sagebrush", (41, 70)),
+        ("Aloe Vera", (71, 90)),
+        ("Desert Grass", (91, 100))
+    ],
+    "forest": [
+        ("Cactus", (1, 40)),
+        ("Sagebrush", (41, 70)),
+        ("Aloe Vera", (71, 90)),
+        ("Desert Grass", (91, 100))
+    ],"grassland": [
+        ("Cactus", (1, 40)),
+        ("Sagebrush", (41, 70)),
+        ("Aloe Vera", (71, 90)),
+        ("Desert Grass", (91, 100))
+    ],"mountain": [
+        ("Cactus", (1, 40)),
+        ("Sagebrush", (41, 70)),
+        ("Aloe Vera", (71, 90)),
+        ("Desert Grass", (91, 100))
+    ],"swamp": [
+        ("Cactus", (1, 40)),
+        ("Sagebrush", (41, 70)),
+        ("Aloe Vera", (71, 90)),
+        ("Desert Grass", (91, 100))
+    ],"underground": [
         ("Cactus", (1, 40)),
         ("Sagebrush", (41, 70)),
         ("Aloe Vera", (71, 90)),
@@ -35,7 +61,7 @@ def roll_flora(biotope):
     if biotope not in flora_tables:
         print("Invalid biotope.")
         return
-    roll = random.randint(1, 100)
+    roll = random.randint(1, 20)
     for flora, rng in flora_tables[biotope]:
         if rng[0] <= roll <= rng[1]:
             print(f"You rolled {roll}: {flora}")
